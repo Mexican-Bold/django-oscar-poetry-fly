@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "django-oscar-poetry-fly"
+version = "0.1.0"
+description = ""
+authors = ["Chef <cheftech@patraldo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django-oscar = {extras = ["sorl-thumbnail"], version = "^3.2.5"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

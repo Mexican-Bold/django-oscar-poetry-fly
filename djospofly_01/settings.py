@@ -23,14 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-7_3q!26ywn&-p^kzls0kz2^yp81q5bpigu2&_k&unb!o(2bbke"
+SECRET_KEY = "SECRET_KEY" 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = "DJANGO_DEBUG" in os.environ and os.environ["DJANGO_DEBUG"] == "ON"
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*.fly.dev']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.fly.dev', 'mexicanbold.com', 'www.mexicanbold.com']
+
+CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']  # <-- Updated!
+
 
 
 # Application definition
@@ -134,7 +137,9 @@ WSGI_APPLICATION = "djospofly_01.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "/data/db.sqlite3", #Production -- comment/uncomment
+        #"NAME": BASE_DIR / "db.sqlite3",  #local development -- comment/uncomment
+
     }
 }
 
@@ -161,9 +166,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es-mx"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "America/Mexico_City"
 
 USE_I18N = True
 

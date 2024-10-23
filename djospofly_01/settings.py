@@ -30,9 +30,9 @@ SECRET_KEY = "SECRET_KEY"
 DEBUG = "DJANGO_DEBUG" in os.environ and os.environ["DJANGO_DEBUG"] == "ON"
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.fly.dev', 'mexicanbold.com', 'www.mexicanbold.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django-oscar-poetry-fly.fly.dev', 'mexicanbold.com', 'www.mexicanbold.com']
 
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']  # <-- Updated!
+CSRF_TRUSTED_ORIGINS = ['https://django-oscar-poetry-fly.fly.dev', 'https://mexicanbold.com', 'https://www.mexicanbold.com']  # <-- Updated!
 
 
 
